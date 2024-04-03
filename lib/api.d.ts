@@ -1,0 +1,1 @@
+export function render(source: any): string;

@@ -1,0 +1,8 @@
+__pycache__/
+/*.egg-info
+/.eggs
+/build
+/dist
+
+/version.txt
+/yowasp_wavedrom/bundle.js

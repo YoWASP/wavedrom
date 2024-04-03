@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools~=69.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+dynamic = ["version"]
+
+name = "yowasp-wavedrom"
+description = "WaveDrom generates diagrams for digital waveforms, bit fields, and simple combinational circuits"
+readme = "README.md"
+authors = [{name = "Catherine", email = "whitequark@whitequark.org"}]
+license = {text = "MIT"}
+classifiers = [
+	"License :: OSI Approved :: MIT License"
+]
+
+requires-python = "~=3.8"
+dependencies = [
+	"importlib_resources; python_version<'3.9'",
+	"quickjs~=1.19"
+]
+
+[project.scripts]
+yowasp-wavedrom = "yowasp_wavedrom:_run_argv"
+
+[project.urls]
+"Homepage" = "https://yowasp.org/"
+"Source Code" = "https://github.com/YoWASP/wavedrom"
+"Bug Tracker" = "https://github.com/YoWASP/wavedrom/issues"
+
+[tool.setuptools.package-data]
+yowasp_wavedrom = ["*.js"]

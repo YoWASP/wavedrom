@@ -1,0 +1,37 @@
+{
+    "name": "@yowasp/wavedrom",
+    "version": null,
+    "description": "WaveDrom generates diagrams for digital waveforms, bit fields, and simple combinational circuits",
+    "author": "Catherine <whitequark@whitequark.org>",
+    "license": "MIT",
+    "homepage": "https://yowasp.org/",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/YoWASP/wavedrom.git"
+    },
+    "bugs": {
+        "url": "https://github.com/YoWASP/wavedrom/issues"
+    },
+    "type": "module",
+    "files": ["out/bundle.js", "bin/yowasp-wavedrom.js"],
+    "exports": {
+        "types": "./lib/api.d.ts",
+        "default": "./out/bundle.js"
+    },
+    "bin": {
+        "yowasp-wavedrom": "./bin/yowasp-wavedrom.js"
+    },
+    "dependencies": {
+        "wavedrom": "3.5.0",
+        "onml": "2.1.0"
+    },
+    "devDependencies": {
+        "esbuild": "^0.20.2",
+        "@bytecodealliance/componentize-js": "^0.8.3",
+        "@bytecodealliance/jco": "^1.1.1"
+    },
+    "scripts": {
+        "build": "node build.mjs",
+        "test": "cd test && jco transpile ../out/wavedrom.component.wasm -o out/ && node test.mjs"
+    }
+}
