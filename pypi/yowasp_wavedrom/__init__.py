@@ -2,7 +2,10 @@ import sys
 import json
 import pathlib
 import quickjs
-import importlib_resources
+try:
+    import importlib.resources as importlib_resources
+except ImportError:
+    import importlib_resources
 
 
 def render(source):
