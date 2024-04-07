@@ -4,7 +4,7 @@ import pathlib
 import quickjs
 try:
     import importlib.resources as importlib_resources
-    importlib_resources.files()
+    importlib_resources.files(__package__)
 except (ImportError, AttributeError):
     import importlib_resources
 
