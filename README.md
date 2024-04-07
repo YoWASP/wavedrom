@@ -50,7 +50,7 @@ This package embeds the [upstream WaveDrom library][upstream] bundled with the m
 
 * The `id` attribute of the root `<svg>` element is removed.
 * The stylesheets are altered to take into account dark color scheme preference via media queries.
-    * When rendering waveform diagrams, the `default` skin automatically switches between light and dark color scheme, and the `light` skin corresponds to the upstream `default` skin.
+    * By default, the diagrams automatically switch between light and dark color schemes based on the user preference. The light variant is the default upstream WaveDrom color scheme, and the dark variant is the same but with colors inverted. Unfortunately, it is not feasible to use media queries to switch between the default/light skin and the dark skin for waveform diagrams, and an inversion filter is used instead.
 * Several otherwise blocking bugs are worked around.
 
 [upstream]: https://npmjs.org/package/wavedrom
