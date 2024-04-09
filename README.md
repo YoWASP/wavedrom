@@ -49,8 +49,9 @@ Implementation notes
 This package embeds the [upstream WaveDrom library][upstream] bundled with the minimal amount of dependencies necessary to produce a serialized SVG, and, for the Python package, with a JavaScript runtime. In addition, the output is post-processed compared to the upstream library as follows:
 
 * The `id` attribute of the root `<svg>` element is removed.
-* The stylesheets are altered to take into account dark color scheme preference via media queries.
-    * By default, the diagrams automatically switch between light and dark color schemes based on the user preference. The light variant is the default upstream WaveDrom color scheme, and the dark variant is the same but with colors inverted. Unfortunately, it is not feasible to use media queries to switch between the default/light skin and the dark skin for waveform diagrams, and an inversion filter is used instead.
+* The stylesheets are altered to take into account dark color scheme preference via media queries. If the user agent reports dark color scheme preference, the colors in the diagram are inverted.
+    * In case of the `dark` waveform diagram skin, this will cause it to use light colors.
+    * When the SVG image is embedded in an HTML document using the `<img>` tag, the color scheme preference can be set per-image using a CSS rule such as `img { color-scheme: light; }`. This can be used to make the images responsive to dynamic theming, or simply to override the default behavior.
 * Several otherwise blocking bugs are worked around.
 
 [upstream]: https://npmjs.org/package/wavedrom
